@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raman's Notebook: B2B stories, carousels and short fiction</title>
+<meta name="description" content="Everything Raman Namboodiripad has made, in one place: B2B stories told like scenes, carousels, short fiction, video scripts and tech writing.">
+<link rel="canonical" href="https://notebook.heyraman.com/">
+<meta property="og:title" content="Raman's Notebook">
+<meta property="og:description" content="B2B stories told like scenes, carousels, short fiction and tech writing.">
+<meta property="og:url" content="https://notebook.heyraman.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Courier+Prime:wght@400;700&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Raman's Notebook","url":"https://notebook.heyraman.com/","author":{"@type":"Person","name":"Raman Namboodiripad","url":"https://heyraman.com/"}}
+</script>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <a class="brand" href="/">Raman's Notebook</a>
+    <nav><a href="/" aria-current="page">Everything</a><a href="/about/">About</a><a href="https://heyraman.com/">heyraman.com</a></nav>
+  </header>
+
+  <main>
+    <div class="sheet">
+      <h1>Everything I've made, <mark>in one notebook.</mark></h1>
+      <p class="lede">B2B stories told like scenes. Carousels, short fiction, video scripts and tech writing, from the cinema years to now.</p>
+      <p class="pen">Start anywhere. It's all here.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter by type">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="carousel" aria-pressed="false">Carousels</button>
+      <button type="button" data-f="story" aria-pressed="false">Stories</button>
+      <button type="button" data-f="video" aria-pressed="false">Video</button>
+      <button type="button" data-f="tech" aria-pressed="false">Tech</button>
+    </div>
+
+    <section class="era" aria-labelledby="era-now">
+      <div class="era-head"><h2 id="era-now">Now: B2B stories</h2><span class="when">2026 →</span></div>
+      <ul class="entries">
+        <li class="entry" data-type="carousel">
+          <span class="tag">Carousel</span>
+          <p class="soon">The first B2B stories land here soon after they're on LinkedIn.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="era" aria-labelledby="era-quora">
+      <div class="era-head"><h2 id="era-quora">The Quora years: short fiction</h2></div>
+      <ul class="entries">
+        <li class="entry" data-type="story">
+          <span class="tag">Stories</span>
+          <span class="title"><strong>94 short stories on Quora</strong></span>
+          <p>Very short fiction, read about 252,000 times. Being collected here one by one.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="era" aria-labelledby="era-cinema">
+      <div class="era-head"><h2 id="era-cinema">The cinema years: video</h2></div>
+      <ul class="entries">
+        <li class="entry" data-type="video">
+          <span class="tag">Video</span>
+          <a class="title" href="https://www.youtube.com/@cinemainaframe2393" rel="noopener">Cinema In a Frame</a>
+          <p>A YouTube channel I scripted and edited. Its top video, <em>Top 10 Monologues in Bollywood History</em>, has about 74,000 views.</p>
+        </li>
+        <li class="entry" data-type="video">
+          <span class="tag">Video</span>
+          <a class="title" href="https://www.youtube.com/@truewordsmalayalam3303" rel="noopener">True Words Malayalam</a>
+          <p>Short motivational films in Malayalam, scripted and edited by me.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="era" aria-labelledby="era-dev">
+      <div class="era-head"><h2 id="era-dev">The developer years: tech</h2></div>
+      <ul class="entries">
+        <li class="entry" data-type="tech">
+          <span class="tag">Tech</span>
+          <p class="soon">Writing from my years as a developer. Coming soon.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© Raman Namboodiripad</span>
+    <span><a href="https://heyraman.com/">heyraman.com</a></span>
+  </footer>
+</div>
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    document.querySelectorAll('.entry').forEach(function(e){e.hidden=!(f==='all'||e.getAttribute('data-type')===f)});
+    document.querySelectorAll('.era').forEach(function(s){s.hidden=!s.querySelector('.entry:not([hidden])')});
+  })});
+})();
+</script>
+</body>
+</html>
